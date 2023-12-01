@@ -1,0 +1,41 @@
+// Variable SCSS
+// Fonts
+$font-Poppins: ('Poppins', sans-serif);
+// $font-SFProDisplay: ('SF Pro Display', sans-serif);
+$font-ProximaNova: ('Proxima Nova', sans-serif);
+
+// Colors
+
+$primary: #f9a280;
+$secondary: #ee8f6a;
+$primary-800: #033833;
+$primary-700: #154A3C;
+$primary-600: #008C80;
+$primary-500: #6EBFAA;
+$primary-500: #B8DBCB;
+$primary-400: #CCE8D7;
+$primary-200: #F7F7F2;
+ 
+
+$white: #FFFFFF;
+$black: #0d0e0f;
+// Breakpoints
+$mobile-width: 767px;
+$tablet-width: 991px;
+$laptop-width: 1199px;
+$desktop-width: 1399px;
+$tv-width: 1499px;
+// Container Sizes
+$container: 1400px;
+$gutter-x: 70px;
+$gutter-x-lg: 35px;
+$gutter-x-xs: 24px;
+// Transition
+$link-transition: 500ms all cubic-bezier(0.76, 0, 0.24, 1);
+$btn-transition: 500ms background-color cubic-bezier(0.76, 0, 0.24, 1),
+300ms color cubic-bezier(0.76, 0, 0.24, 1),
+300ms border-color cubic-bezier(0.76, 0, 0.24, 1),
+300ms opacity cubic-bezier(0.76, 0, 0.24, 1),
+300ms box-shadow cubic-bezier(0.76, 0, 0.24, 1),
+300ms stroke cubic-bezier(0.76, 0, 0.24, 1),
+300ms fill cubic-bezier(0.76, 0, 0.24, 1);

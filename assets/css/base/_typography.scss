@@ -1,0 +1,101 @@
+// Typography SCSS
+body {
+    font-family: $font-Poppins;
+    font-weight: 400;
+    color: $black;
+    font-size: 18px;
+    line-height: 28px;
+    overflow-x: hidden;
+    @include mobile {
+        font-size: 16px;
+    }
+}
+
+b,
+strong {
+    font-weight: 700;
+}
+ 
+h2 {
+    font-size: 345px;
+    white-space: nowrap;
+    font-weight: 700;
+    color: $black;
+    font-family: $font-Poppins;
+    text-transform: uppercase;
+    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $white;
+    @include laptop {
+        font-size: 316px;
+    }
+    @include mobile {
+        font-size: 180px;
+    }
+}
+
+h3 {
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 1;
+    font-family: $font-Poppins;
+    text-transform: uppercase;
+    color: $black;
+    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: rgba($black, 0.2);
+    @include laptop {
+        font-size: 70px;
+    }
+    @include tablet {
+        font-size: 60px;
+    }
+    @include mobile {
+        font-size: 50px;
+        -webkit-text-stroke-width: 1px;
+    }
+}
+
+h4 {
+    font-family: $font-Poppins;
+    font-size: 23px;
+    line-height: 1;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $primary;
+    @include tablet {
+        font-size: 20px;
+    }
+    @include tablet {
+        font-size: 18px;
+    }
+}
+
+h5 {
+    font-family: $font-Poppins;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    @include desktop {
+        font-size: 30px;
+    }
+    @include mobile {
+        font-size: 23px;
+    }
+}
+
+.p {
+    font-family: $font-ProximaNova;
+    color: #686868;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 30px;
+    line-height: 1.28;
+    @include tablet {
+        font-size: 24px;
+    }
+    @include mobile {
+        font-size: 20px;
+    }
+}
