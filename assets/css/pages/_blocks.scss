@@ -139,7 +139,10 @@
         & .grow-image {
             width: 1300px;
             @include desktop {
-                width: 1120px;
+                width: 1020px;
+            }
+            @include height {
+                width: 912px;
             }
             @include laptop {
                 width: 912px;
@@ -193,6 +196,12 @@
                 margin-left: -291px;
                 margin-top: -171px;
             }
+            @include height {
+                width: 205px;
+                height: 79px;
+                margin-left: -237px;
+                margin-top: -139px;
+            }
             @include laptop {
                 width: 205px;
                 height: 79px;
@@ -228,6 +237,12 @@
                 margin-left: -291px;
                 margin-top: -49px;
             }
+            @include height {
+                width: 205px;
+                height: 79px;
+                margin-left: -237px;
+                margin-top: -40px;
+            }
             @include laptop {
                 width: 205px;
                 height: 79px;
@@ -261,6 +276,12 @@
                 height: 97px;
                 margin-left: -291px;
                 margin-top: 74px;
+            }
+            @include height {
+                width: 205px;
+                height: 79px;
+                margin-left: -237px;
+                margin-top: 61px;
             }
             @include laptop {
                 width: 205px;
@@ -305,6 +326,12 @@
         height: 974px;
         margin-left: -166px;
         margin-top: -197px;
+    }
+    @include height {
+        width: 2050px;
+        height: 793px;
+        margin-left: -135px;
+        margin-top: -174px;
     }
     @include laptop {
         width: 2050px;
@@ -384,20 +411,7 @@
         }
     }
 }
-
-#third-section {
-    width: 100vw;
-    height: 100vh;
-    background-color: antiquewhite;
-    position: fixed;
-    top: 0;
-    left: 0;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
+ 
 .next {
     font-size: 126px;
     white-space: nowrap;
@@ -818,7 +832,10 @@
     & video {
         width: 100%;
         height: 100%;
-        object-fit: cover;        
+        object-fit: cover;   
+        @include height {
+            object-position: bottom;
+        }     
     }
 }
 .book-block {
@@ -828,6 +845,9 @@
 	bottom: 75px;
     visibility: hidden;
     opacity: 0;
+    @include height {
+        bottom: 40px;
+    }
 }
 
 .book-modal {
@@ -845,6 +865,9 @@
         right: 0;
         bottom: 75px;
         z-index: 10;
+        @include height {
+            bottom: 40px;
+        }
     }
     & .block {
         display: grid;
@@ -874,6 +897,9 @@
                 justify-content: flex-end;
                 flex-direction: column;
                 height: 500px;
+                @include height {
+                    height: 460px;
+                }
                 @include laptop {
                     height: auto;
                 }

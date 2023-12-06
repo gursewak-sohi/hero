@@ -36,6 +36,12 @@
     }
 }
 
+@mixin height {
+    @media (max-height: $mini-height) and (min-width: $laptop-width) {
+        @content;
+    }
+}
+
 // Placehoders
 %bg-image {
     width: 100%;

@@ -33,6 +33,12 @@
         ? smWidth = true
         : smWidth = false;
 
+    let smHeight;
+    screen.height < 768
+        ? smHeight = true
+        : smHeight = false;
+        
+
     // Init GSAP
     gsap.registerPlugin(ScrollTrigger);
 

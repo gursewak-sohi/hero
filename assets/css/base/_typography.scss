@@ -44,8 +44,11 @@ h3 {
     -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: rgba($black, 0.2);
+    @include height {
+        font-size: 68px;
+    }
     @include laptop {
-        font-size: 70px;
+        font-size: 68px;
     }
     @include tablet {
         font-size: 60px;
@@ -66,7 +69,7 @@ h4 {
     @include tablet {
         font-size: 20px;
     }
-    @include tablet {
+    @include mobile {
         font-size: 18px;
     }
 }
