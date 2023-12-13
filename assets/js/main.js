@@ -184,7 +184,7 @@
         ScrollTrigger.create({
             trigger: "#intro-section",
             start: "top top",  
-            end: "+=2000", 
+            end: "+=1000", 
             pin: true,
             onEnter: () => introVideo.play(),
             onLeave: () => introVideo.pause(),
@@ -234,7 +234,7 @@
             autoAlpha: 0,
             ease: "none",
             duration: 0.4,
-        },"+=1")
+        })
         .to("#dune-section", {
             autoAlpha: 0,
             ease: "none",
@@ -249,7 +249,7 @@
             autoAlpha: 1,
             ease: "none",
             duration: 0.4  
-        }, "+=2")
+        }, "+=0.5")
         .to("#canbana-section .cabana-video", {
             scale: 1,
             ease: "none",
@@ -274,7 +274,7 @@
             autoAlpha: 0,
             ease: "none",
             duration: 0.4  
-        },"+=1")
+        })
         .to("#luxury-section", {
             autoAlpha: 1,
             ease: "none",
@@ -284,7 +284,7 @@
             autoAlpha: 1,
             ease: "none",
             duration: 0.4  
-        }, "+=2")
+        }, "+=0.5")
         .to("#balloon-section .people", {
             scale: 2.3,
             ease: "none",
@@ -319,7 +319,7 @@
             autoAlpha: 0,
             ease: "none",
             duration: 0.4 
-        },"+=1")
+        })
         .to("#luxury-section", {
             autoAlpha: 0,
             ease: "none",
@@ -334,7 +334,7 @@
             autoAlpha: 1,
             ease: "none",
             duration: 0.4  
-        }, "+=2")
+        }, "+=0.5")
         .to("#dubai-section .people", {
             scale: 2.3,
             ease: "none",
@@ -366,12 +366,12 @@
             autoAlpha: 1,
             ease: "none",
             duration: 0.4 
-        }, "+=1")
+        })
         .to("#boat-section", {
             autoAlpha: 1,
             ease: "none",
             duration: 0.4  
-        }, "+=2")
+        }, "+=0.5")
         .to("#boat-section .boat", {
             transformOrigin: "top right",
             right: '100%',
@@ -418,7 +418,7 @@
             autoAlpha: 0,
             ease: "none",
             duration: 0.4 
-        }, "+=1")
+        })
         .to("#ride-section", {
             autoAlpha: 1,
             ease: "none",
@@ -428,7 +428,7 @@
             autoAlpha: 1,
             ease: "none",
             duration: 0.4 
-        }, "+=2");
+        }, "+=0.5");
         
 
 
