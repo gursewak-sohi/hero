@@ -156,12 +156,12 @@
         .to("#banner-section  .dune-thumb", {
             ease: "none",
             autoAlpha: 0,
-            duration: 0.1, 
+            duration: 0.01, 
         }, "<")
         .to("#dune-section", {
             ease: "none",
             autoAlpha: 1,
-            duration: 0.1, 
+            duration: 0.01, 
         }, "<")
         .to("#dune-section", {
                 ease: "none",

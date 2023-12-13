@@ -92,8 +92,6 @@
 
 .banner-section {
     height: 100vh;
-    // height: calc(var(--vh, 1vh) * 100);
-    // min-height: 840px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -101,6 +99,7 @@
     padding: 0 40px;
     flex-direction: column;
     gap: 20px;
+    will-change: transform;
     @include mobile {
         padding: 0 20px;
     }
@@ -139,7 +138,7 @@
         & .grow-image {
             width: 1300px;
             @include desktop {
-                width: 1020px;
+                width: 1130px;
             }
             @include height {
                 width: 912px;
