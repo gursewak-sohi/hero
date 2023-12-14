@@ -89,16 +89,16 @@ h5 {
 }
 
 .p {
-    font-family: $font-ProximaNova;
+    font-family: $font-Poppins;
     color: #686868;
     font-weight: 300;
     font-style: italic;
-    font-size: 30px;
+    font-size: 26px;
     line-height: 1.28;
     @include tablet {
-        font-size: 24px;
+        font-size: 22px;
     }
     @include mobile {
-        font-size: 20px;
+        font-size: 18px;
     }
 }

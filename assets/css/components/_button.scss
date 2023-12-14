@@ -40,6 +40,7 @@
     border-radius: 5px;
     font-weight: 500;
     text-transform: uppercase;
+    cursor: alias;
     &::after {
         content: '';
         position: absolute;
@@ -110,7 +111,7 @@
 
 .btn-book-secondary {
     color: #fff;
-    background-color: #f9a280;
+    background-color: #29B7B0;
     &:hover {
         background-color: #51B8E5;
     }

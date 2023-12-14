@@ -1,41 +1,4 @@
 // Fonts SCSS
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-// @font-face {
-//     font-family: 'SF Pro Display';
-//     // src: url('../assets/fonts/SFProDisplay/Heavy/font.woff2') format('woff2');
-//     src: url('../assets/fonts/SFProDisplay/Heavy/font.woff2') format('woff2'), url('../assets/fonts/SFProDisplay/Heavy/font.woff') format('woff');
-//     font-weight: 800;
-//     font-style: normal;
-//     font-display: swap;
-// }
-
-// @font-face {
-//     font-family: 'SF Pro Display';
-//     // src: url('../assets/fonts/SFProDisplay/Bold/font.woff2') format('woff2');
-//     src: url('../assets/fonts/SFProDisplay/Bold/font.woff2') format('woff2'), url('../assets/fonts/SFProDisplay/Bold/font.woff') format('woff');
-//     font-weight: 700;
-//     font-style: normal;
-//     font-display: swap;
-// }
-
-// @font-face {
-//     font-family: 'SF Pro Display';
-//     // src: url('../assets/fonts/SFProDisplay/Regular/font.woff2') format('woff2');
-//     src: url('../assets/fonts/SFProDisplay/Regular/font.woff2') format('woff2'), url('../assets/fonts/SFProDisplay/Regular/font.woff') format('woff');
-//     font-weight: 400;
-//     font-style: normal;
-//     font-display: swap;
-// }
-
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('../assets/fonts/ProximaNova/LightItalic/font.woff2') format('woff2'), url('../assets/fonts/ProximaNova/LightItalic/font.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
-
-
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
  

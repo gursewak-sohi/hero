@@ -79,7 +79,7 @@
         scrollTrigger: {
             trigger: "#main",
             start: "top top",
-            end: smWidth ? "+=15000px" : "+=30000px",
+            end: smWidth ? "+=10000px" : "+=30000px",
             scrub: 1,
             pin: true,
         }
@@ -88,7 +88,7 @@
     if (smWidth) {
         mainTL.to("#banner-section .block", {
             ease: "none",
-            duration: 2, 
+            duration: 0.5, 
             marginLeft: 25,
             marginTop: 25,
             left : 0,
@@ -105,12 +105,12 @@
         .to("#banner-section span", {
             ease: "none",
             autoAlpha: 0,
-            duration: 2, 
+            duration: 0.5, 
         }, "<")
         .to("#banner-section .thumb", {
             ease: "none",
             autoAlpha: 0,
-            duration: 2, 
+            duration: 0.5, 
         }, "<")
         .to("#dune-section", {
             ease: "none",
@@ -250,6 +250,11 @@
             ease: "none",
             duration: 0.4  
         }, "+=0.5")
+        .to("#logo", {
+            color: '#fff',
+            ease: "none",
+            duration: 0.4  
+        }, "<")
         .to("#canbana-section .cabana-video", {
             scale: 1,
             ease: "none",
@@ -275,6 +280,11 @@
             ease: "none",
             duration: 0.4  
         })
+        .to("#logo", {
+            color: '#303030',
+            ease: "none",
+            duration: 0.4  
+        }, "<")
         .to("#luxury-section", {
             autoAlpha: 1,
             ease: "none",
