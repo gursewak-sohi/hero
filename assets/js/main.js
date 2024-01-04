@@ -82,6 +82,7 @@
             end: smWidth ? "+=10000px" : "+=30000px",
             scrub: 1,
             pin: true,
+            // markers: true,
         }
     });
 
@@ -245,16 +246,23 @@
             ease: "none",
             duration: 0.4 
         }, "<")
-        .to("#canbana-section", {
-            autoAlpha: 1,
+        .to("#heritage-section", {
+            // autoAlpha: 1,
             ease: "none",
-            duration: 0.4  
-        }, "+=0.5")
+            duration: 3,
+            yPercent: -100,
+        })
+        .to("#canbana-section", {
+            y: 0,
+            // autoAlpha: 1,
+            ease: "none",
+            duration: 3 
+        }, "<")
         .to("#logo", {
             color: '#fff',
             ease: "none",
             duration: 0.4  
-        }, "<")
+        })
         .to("#canbana-section .cabana-video", {
             scale: 1,
             ease: "none",
@@ -275,26 +283,37 @@
             ease: "none",
             duration: 0.4  
         }, "<")
-        .to("#canbana-section", {
-            autoAlpha: 0,
-            ease: "none",
-            duration: 0.4  
-        })
         .to("#logo", {
             color: '#303030',
             ease: "none",
             duration: 0.4  
-        }, "<")
+        })
+        
         .to("#luxury-section", {
             autoAlpha: 1,
             ease: "none",
-            duration: 0.4 
+            duration: 0.4,
+        }, "<")
+        .to("#canbana-section", {
+            autoAlpha: 0,
+            ease: "none",
+            duration: 0.4  
         }, "<")
         .to("#balloon-section", {
             autoAlpha: 1,
             ease: "none",
-            duration: 0.4  
-        }, "+=0.5")
+            duration: 0.4,
+        }, "<")
+        .to("#luxury-section", {
+            ease: "none",
+            duration: 3,
+            yPercent: -100,
+        })
+        .to("#balloon-section", {
+            y: 0,
+            ease: "none",
+            duration: 3,
+        }, "<")
         .to("#balloon-section .people", {
             scale: 2.3,
             ease: "none",
@@ -325,6 +344,7 @@
             ease: "none",
             duration: 4  
         }, "<")
+        
         .to("#balloon-section", {
             autoAlpha: 0,
             ease: "none",
@@ -344,7 +364,18 @@
             autoAlpha: 1,
             ease: "none",
             duration: 0.4  
-        }, "+=0.5")
+        }, "<")
+        .to("#soar-section", {
+            yPercent: -100,
+            ease: "none",
+            duration: 3 
+        })
+        .to("#dubai-section", {
+            autoAlpha: 1,
+            y: 0,
+            ease: "none",
+            duration: 3  
+        }, "<")
         .to("#dubai-section .people", {
             scale: 2.3,
             ease: "none",
@@ -381,7 +412,17 @@
             autoAlpha: 1,
             ease: "none",
             duration: 0.4  
-        }, "+=0.5")
+        }, "<")
+        .to("#rise-section", {
+            yPercent: -100,
+            ease: "none",
+            duration: 3 
+        })
+        .to("#boat-section", {
+            y: 0,
+            ease: "none",
+            duration: 3  
+        }, "<")
         .to("#boat-section .boat", {
             transformOrigin: "top right",
             right: '100%',
@@ -390,7 +431,7 @@
             scale: 1.3,
             ease: "Power1.easeInOut",
             duration: 4, 
-        }, "<")
+        })
         .to("#boat-section .boat", {
             y: '+=20', 
             ease: "Power1.easeInOut",
@@ -438,7 +479,7 @@
             autoAlpha: 1,
             ease: "none",
             duration: 0.4 
-        }, "+=0.5");
+        }, "+=0.2");
         
 
 
