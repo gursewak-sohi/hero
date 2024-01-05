@@ -155,6 +155,10 @@
         }
         & .grow-image {
             width: 1300px;
+            will-change: transform;
+            & img {
+                width: 100%;
+            }
             @include desktop {
                 width: 1130px;
             }
@@ -197,6 +201,14 @@
         }
         & .text-second {
             margin-left: auto;
+        }
+        & .thumb {
+            will-change: transform;
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
         & .dune-thumb {
             position: absolute;

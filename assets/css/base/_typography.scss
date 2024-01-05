@@ -20,12 +20,12 @@ h2 {
     font-size: 345px;
     white-space: nowrap;
     font-weight: 700;
-    color: $black;
+    color: $white;
     font-family: $font-Poppins;
     text-transform: uppercase;
-    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: $white;
+    // -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+    // -webkit-text-stroke-width: 2px;
+    // -webkit-text-stroke-color: $white;
     @include laptop {
         font-size: 316px;
     }
