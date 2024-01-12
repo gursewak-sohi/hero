@@ -894,16 +894,18 @@
 .book-block {
     z-index: 200;
     position: fixed;
-    right: 0;
+    right: 50px;
     // top: calc(var(--vh, 1vh) * 88);
-    bottom: 70px;
+    bottom: 50px;
     visibility: hidden;
     opacity: 0;
     @include height {
-        bottom: 40px;
+        right: 30px;
+        bottom: 30px;
     }
     @include mobile {
-        bottom: 40px;
+        right: 30px;
+        bottom: 30px;
     }
 }
 
