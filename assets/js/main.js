@@ -86,6 +86,12 @@
         }
     });
 
+    mainTL.to("#intro-section", {
+        autoAlpha: 0,
+        ease: "none",
+        duration: 0.4 
+    }, "+=0.2");
+
     if (smWidth) {
         mainTL.to("#banner-section .block", {
             ease: "none",
@@ -182,16 +188,16 @@
             duration: 0.1, 
         }, "<");
 
-        ScrollTrigger.create({
-            trigger: "#intro-section",
-            start: "top top",  
-            end: "+=1000", 
-            pin: true,
-            onEnter: () => introVideo.play(),
-            onLeave: () => introVideo.pause(),
-            onEnterBack: () => introVideo.play(),
-            onLeaveBack: () => introVideo.pause()
-        });
+        // ScrollTrigger.create({
+        //     trigger: "#intro-section",
+        //     start: "top top",  
+        //     end: "+=1000", 
+        //     pin: true,
+        //     onEnter: () => introVideo.play(),
+        //     onLeave: () => introVideo.pause(),
+        //     onEnterBack: () => introVideo.play(),
+        //     onLeaveBack: () => introVideo.pause()
+        // });
     }
 
         
@@ -474,12 +480,7 @@
             autoAlpha: 1,
             ease: "none",
             duration: 0.4 
-        }, "<")
-        .to("#intro-section", {
-            autoAlpha: 1,
-            ease: "none",
-            duration: 0.4 
-        }, "+=0.2");
+        }, "<");
         
 
 
