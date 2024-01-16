@@ -17,14 +17,10 @@
 
 .container-fluid {
     max-width: 100%;
-    padding-left: $gutter-x;
-    padding-right: $gutter-x;
+    padding-left: 30px;
+    padding-right: 30px;
     margin: 0 auto;
     width: 100%;
-    @include desktop {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
     @include tablet {
         padding-left: $gutter-x-xs;
         padding-right: $gutter-x-xs;
