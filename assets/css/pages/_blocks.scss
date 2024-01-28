@@ -1,5 +1,4 @@
 // Blocks SCSS
-
 .loader-wrapper {
     position: fixed;
     top: 0;
@@ -26,35 +25,27 @@
     }
 }
 
-.logo-section {
-    z-index: 90;
-    visibility: hidden;
-    opacity: 0;
+ 
+.logo-block {
     position: absolute;
-    width: 100%;
-    left: 0;
-    & .logo-block {
-        position: relative;
-        & a {
-            position: absolute;
-            top: 40px;
-            left: 0;
-            width: 160px;
-            @include tablet {
-                width: 140px;
-            }
-            @include mobile {
-                width: 138px;
-                top: 24px;
-                left: -9px;
-            }
-            & svg {
-                color: #303030;
-                height: 80px;
-            }
+        top: 40px;
+        left: 40px;
+        width: 160px;
+        height: 80px;
+        z-index: 20;
+        @include tablet {
+            width: 140px;
         }
-    }
+        @include mobile {
+            width: 138px;
+            top: 24px;
+            left: 14px;
+        }
+        & a {
+            display: block;
+        }
 }
+ 
 
 .scroll-section {
     display: flex;
@@ -248,7 +239,7 @@
                 width: 63px;
                 height: 25px;
                 margin-left: -73px;
-                margin-top: -43px;
+                margin-top: -46px;
             }
         }
         & .baloon-thumb {
@@ -288,7 +279,7 @@
                 width: 63px;
                 height: 25px;
                 margin-left: -73px;
-                margin-top: -12px;
+                margin-top: -15px;
             }
         }
         & .cabanna-thumb {
@@ -328,7 +319,7 @@
                 width: 63px;
                 height: 25px;
                 margin-left: -73px;
-                margin-top: 18px;
+                margin-top: 15px;
             }
         }
     }
@@ -336,52 +327,13 @@
 }
 
 .dune-section {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
-    width: 2930px;
-    height: 1130px;
-    margin-left: -192px;
-    margin-top: -218px;
+    width: 100vw;
+    height: 120vh;
     overflow: hidden;
-    z-index: 10;
-    max-width: none;
-    max-height: none;
-    opacity: 0;
-    visibility: hidden;
-    @include desktop {
-        width: 2530px;
-        height: 974px;
-        margin-left: -166px;
-        margin-top: -197px;
-    }
-    @include height {
-        width: 2050px;
-        height: 793px;
-        margin-left: -135px;
-        margin-top: -174px;
-    }
-    @include laptop {
-        width: 2050px;
-        height: 793px;
-        margin-left: -135px;
-        margin-top: -174px;
-    }
-    @include tablet {
-        width: 1498px;
-        height: 596px;
-        margin-left: -99px;
-        margin-top: -161px;
-    }
+    top: 0;
+    left: 0;
     @include mobile {
-        width: 100vw;
         height: 100vh;
-        margin-left: 0;
-        margin-top: 0;
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0;
-        visibility: hidden;
     }
     & .bg {
         width: 100%;
@@ -431,16 +383,16 @@
     .text {
         transform: translateY(-50%);
         top: 50%;
-        margin-top: 0;
+        // margin-top: 0;
         position: absolute;
         left: 100%;
-        margin-top: -110px;
+        // margin-top: -110px;
         @include tablet {
             z-index: 10;
         }
-        @include mobile {
-            margin-top: -110px;
-        }
+        // @include mobile {
+        //     margin-top: -110px;
+        // }
     }
 }
 
@@ -460,9 +412,10 @@
 .text-section {
     width: 100vw;
     height: 100vh;
-    position: fixed;
+    
     top: 0;
     left: 0;
+ 
     // opacity: 0;
     // visibility: hidden;
     background-color: $white;
@@ -500,19 +453,18 @@
 
 .cabana-section {
     width: 100vw;
-    height: 100vh;
-    position: fixed;
+    height: 120vh;
     top: 0;
     left: 0;
     overflow: hidden;
-    // opacity: 0;
-    // visibility: hidden;
-    transform: translateY(100%);
+    @include mobile {
+        height: 100vh;
+    }
     & .cabana-video {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transform: scale(7);
+        transform: scale(3);
         @include mobile {
             transform: scale(3);
         }
@@ -521,7 +473,7 @@
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translateX(-50%) scale(7);
+        transform: translateX(-50%) scale(3);
         width: 490px;
         margin-left: 45px;
         z-index: 10;
@@ -536,25 +488,24 @@
     & .text {
         transform: translateY(-50%);
         top: 50%;
-        margin-top: -50px;
+        // margin-top: -50px;
         position: absolute;
         left: 100%;
-        @include mobile {
-            margin-top: -20px;
-        }
+        // @include mobile {
+        //     margin-top: -20px;
+        // }
     }
 }
 
 .balloon-section {
     width: 100vw;
-    height: 100vh;
-    position: fixed;
+    height: 120vh;
     top: 0;
     left: 0;
     overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(100%);
+    @include mobile {
+        height: 100vh;
+    }
     & .bg {
         width: 100%;
         height: 100%;
@@ -612,25 +563,24 @@
     & .text {
         transform: translateY(-50%);
         top: 50%;
-        margin-top: -190px;
+        // margin-top: -190px;
         position: absolute;
         left: 100%;
-        @include mobile {
-            margin-top: -180px;
-        }
+        // @include mobile {
+        //     margin-top: -180px;
+        // }
     }
 }
 
 .dubai-section {
     width: 100vw;
-    height: 100vh;
-    position: fixed;
+    height: 120vh;
     top: 0;
     left: 0;
     overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(100%);
+    @include mobile {
+        height: 100vh;
+    }
     & .bg {
         width: 100%;
         height: 100%;
@@ -658,25 +608,24 @@
     & .text {
         transform: translateY(-50%);
         top: 50%;
-        margin-top: -130px;
+        // margin-top: -130px;
         position: absolute;
         left: 100%;
-        @include mobile {
-            margin-top: -20px;
-        }
+        // @include mobile {
+        //     margin-top: -20px;
+        // }
     }
 }
 
 .boat-section {
     width: 100vw;
-    height: 100vh;
-    position: fixed;
+    height: 120vh;
     top: 0;
     left: 0;
     overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(100%);
+    @include mobile {
+        height: 100vh;
+    }
     & .bg {
         width: 100%;
         height: 100%;
@@ -738,12 +687,12 @@
     & .text {
         transform: translateY(-50%);
         top: 50%;
-        margin-top: -190px;
+        // margin-top: -190px;
         position: absolute;
         left: 100%;
-        @include mobile {
-            margin-top: -100px;
-        }
+        // @include mobile {
+        //     margin-top: -100px;
+        // }
     }
 }
 

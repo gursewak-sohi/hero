@@ -40,446 +40,216 @@
         
 
     // Init GSAP
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-    
-
-    const duneSection = document.querySelector('#dune-section');
-
-    // Setting transform origin for HERO
-    function updateTransformOrigin() {
-        const bannerSection = document.querySelector('#banner-section');
-    
-        if (duneSection && bannerSection) {
-            const duneRect = duneSection.getBoundingClientRect();
-            const bannerRect = bannerSection.getBoundingClientRect();
-    
-            // Calculate the center of the dune-section
-            const originX = (duneRect.left + (duneRect.width / 2)) - bannerRect.left;
-            const originY = (duneRect.top + (duneRect.height / 2)) - bannerRect.top;
-    
-            // Set the transform origin for banner-section
-            bannerSection.style.transformOrigin = `${originX}px ${originY}px`;
-        }
+    if (!smWidth) {
+        ScrollSmoother.create({
+            smooth: 0.5, // how long (in seconds) it takes to "catch up" to the native scroll position
+            effects: true, // looks for data-speed and data-lag attributes on elements
+        });
     }
-    
-    // Call this function on load and on resize
-    window.addEventListener('load', updateTransformOrigin);
-  
-
-    // Retrieve margin values from #dune-section
-    const duneStyle = getComputedStyle(duneSection);
-    const duneMarginLeft = parseInt(duneStyle.marginLeft, 10);
-    const duneMarginTop = parseInt(duneStyle.marginTop, 10);
-   
-    const introVideo = document.querySelector('#intro-section video');
   
     // Animations
-    let mainTL = gsap.timeline({
+    let duneTL = gsap.timeline({
         scrollTrigger: {
-            trigger: "#main",
-            start: "top top",
-            end: smWidth ? "+=10000px" : "+=30000px",
+            trigger: "#dune-section",
+            start: "top center",
+            end: "bottom center",
             scrub: 1,
-            pin: true,
-            // markers: true,
+            pin: false,
+            markers: false,
+        }
+    });
+    
+    // Scroll-triggered animation for #book-block
+    gsap.to("#book-block", {
+        autoAlpha: 1,
+        ease: "none",
+        scrollTrigger: {
+            trigger: "#book-block",
+            start: "top bottom", 
+            end: "bottom top",
+            scrub: true,
         }
     });
 
-    if (smWidth) {
-        mainTL.to("#banner-section .block", {
-            ease: "none",
-            duration: 0.5, 
-            marginLeft: 25,
-            marginTop: 25,
-            left : 0,
-            top : 0,
-            transform: 'translate(0, 0)',
-            scale: 0.42,
-            transformOrigin: "top left",
-        })
-        .to("#banner-section .banner-text", {
-            ease: "none",
-            autoAlpha: 0,
-            duration: 0.2, 
-        }, "<")
-        .to("#banner-section span", {
-            ease: "none",
-            autoAlpha: 0,
-            duration: 0.5, 
-        }, "<")
-        .to("#banner-section .thumb", {
-            ease: "none",
-            autoAlpha: 0,
-            duration: 0.5, 
-        }, "<")
-        .to("#dune-section", {
-            ease: "none",
-            autoAlpha: 1,
-            duration: 0.2,  
-        })
-        .to("#scroll-section", {
-            ease: "none",
-            opacity: 0,
-            duration: 0.5,  
-        }, "<")
-        .to("#logo-section", {
-            ease: "none",
-            autoAlpha: 1,
-            duration: 0.2,  
-       }, "<")
-       .to("#book-block", {
-        ease: "none",
-        autoAlpha: 1,
-        duration: 0.1, 
-    }, "<");
-
-    }
-    else {
-        mainTL
-        .to("#banner-section", {
-            ease: "none",
-            scale: 10,
-            duration: 2, 
-            marginLeft: -duneMarginLeft,
-            marginTop: -duneMarginTop,
-        })
-        .to("#banner-section .banner-text", {
-            ease: "none",
-            autoAlpha: 0,
-            duration: 0.03, 
-        }, "<")
-        .to("#scroll-section", {
-            ease: "none",
-            opacity: 0,
-            duration: 0.03,  
-        }, "<")
-        .to("#banner-section  .dune-thumb", {
-            ease: "none",
-            autoAlpha: 0,
-            duration: 0.01, 
-        }, "<")
-        .to("#dune-section", {
-            ease: "none",
-            autoAlpha: 1,
-            duration: 0.01, 
-        }, "<")
-        .to("#dune-section", {
-                ease: "none",
-                scale: 1,
-                duration: 2,  
-                height: '100vh',
-                margin: 0,
-        }, "<")
-        .to("#logo-section", {
-            ease: "none",
-            autoAlpha: 1,
-            duration: 1,  
-        })
-        .to("#book-block", {
-            ease: "none",
-            autoAlpha: 1,
-            duration: 0.1, 
-        }, "<");
-
-        ScrollTrigger.create({
-            trigger: "#intro-section",
-            start: "top top",  
-            end: "+=1000", 
-            pin: true,
-            onEnter: () => introVideo.play(),
-            onLeave: () => introVideo.pause(),
-            onEnterBack: () => introVideo.play(),
-            onLeaveBack: () => introVideo.pause()
-        });
-    }
-
-        
-    mainTL.to("#dune-section .car", {
+    // duneTL
+    duneTL.to("#dune-section .car", {
             scale: 2,
             transformOrigin: "top right",
             ease: "none",
-            duration: 5
-        }, "<")
+        })
         .to("#dune-section .bg", {
             scale: 1.1,
             transformOrigin: "top center",
             ease: "none",
-            duration: 5
         }, "<")
-        .to("#dune-section", {
-            ease: "none",
-            width: '100vw',  
-            duration: 1
-        }, "+1")
         .to("#dune-section .text", {
             x: () => -(document.querySelector('#dune-section .text').offsetWidth + window.innerWidth),
             ease: "none",
-            duration: 5  
-        }, "+2")
+            
+        }, "<")
         .to("#dune-section .car", {
-            yoyo: true,
-            repeat: 2,
+            // yoyo: true,
+            // repeat: 2,
             y: "-=10",
             ease: "none",
-            duration: 1
-        }, "+2")  
+        }, "<")
         .to("#dune-section .driver", {
-            yoyo: true,
-            repeat: 2,
+            // yoyo: true,
+            // repeat: 2,
             y: "+=20",
             ease: "none",
-            duration: 1
-        }, "+2")  
-        .to("#banner-section", {
-            autoAlpha: 0,
-            ease: "none",
-            duration: 0.4,
-        })
-        .to("#dune-section", {
-            autoAlpha: 0,
-            ease: "none",
-            duration: 0.4,
         }, "<")
-        .to("#heritage-section", {
-            autoAlpha: 1,
-            ease: "none",
-            duration: 0.4 
-        }, "<")
-        .to("#heritage-section", {
-            // autoAlpha: 1,
-            ease: "none",
-            duration: 3,
-            yPercent: -100,
-        })
-        .to("#canbana-section", {
-            y: 0,
-            // autoAlpha: 1,
-            ease: "none",
-            duration: 3 
-        }, "<")
-        .to("#logo", {
-            color: '#fff',
-            ease: "none",
-            duration: 0.4  
-        })
-        .to("#canbana-section .cabana-video", {
+        
+
+        let cabanaTL = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#canbana-section",
+                start: "top center",
+                end: "bottom center",
+                scrub: 1,
+                pin: false,
+                // markers: true,
+            }
+        });
+
+        
+        cabanaTL.to("#canbana-section .cabana-video", {
             scale: 1,
             ease: "none",
-            duration: 4 
         })
         .to("#canbana-section .cabana-sit", {
             scale: 1,
             ease: "none",
-            duration: 4,  
         }, "<")
         .to("#canbana-section .text", {
             x: () => -(document.querySelector('#canbana-section .text').offsetWidth + window.innerWidth),
             ease: "none",
-            duration: 4  
         }, "<")
-        .to("#heritage-section", {
-            autoAlpha: 0,
-            ease: "none",
-            duration: 0.4  
-        }, "<")
-        .to("#logo", {
-            color: '#303030',
-            ease: "none",
-            duration: 0.4  
-        })
+
+        let baloonTL = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#balloon-section",
+                start: "top center",
+                end: "bottom center",
+                scrub: 1,
+                pin: false,
+                // markers: true,
+            }
+        });
+
         
-        .to("#luxury-section", {
-            autoAlpha: 1,
-            ease: "none",
-            duration: 0.4,
-        }, "<")
-        .to("#canbana-section", {
-            autoAlpha: 0,
-            ease: "none",
-            duration: 0.4  
-        }, "<")
-        .to("#balloon-section", {
-            autoAlpha: 1,
-            ease: "none",
-            duration: 0.4,
-        }, "<")
-        .to("#luxury-section", {
-            ease: "none",
-            duration: 3,
-            yPercent: -100,
-        })
-        .to("#balloon-section", {
-            y: 0,
-            ease: "none",
-            duration: 3,
-        }, "<")
-        .to("#balloon-section .people", {
+        baloonTL.to("#balloon-section .people", {
             scale: 2.3,
             ease: "none",
             transformOrigin: "center right",
-            duration: 4,
-            // filter: 'blur(3px)',
         })
         .to("#balloon-section .bg", {
             scale: 1.3,
             filter: 'blur(0px)',
             ease: "none",
-            duration: 4,  
+            
         }, "<")
         .to("#balloon-section .balloon-lg", {
             scale: 1.3,
             filter: 'blur(0px)',
             ease: "none",
-            duration: 4,  
         }, "<")
         .to("#balloon-section .balloon-sm", {
             scale: 1.3,
             filter: 'blur(0px)',
             ease: "none",
-            duration: 4,  
         }, "<")
         .to("#balloon-section .text", {
             x: () => -(document.querySelector('#balloon-section .text').offsetWidth + window.innerWidth),
             ease: "none",
-            duration: 4  
         }, "<")
-        
-        .to("#balloon-section", {
-            autoAlpha: 0,
-            ease: "none",
-            duration: 0.4 
-        })
-        .to("#luxury-section", {
-            autoAlpha: 0,
-            ease: "none",
-            duration: 0.4 
-        }, "<")
-        .to("#soar-section", {
-            autoAlpha: 1,
-            ease: "none",
-            duration: 0.4 
-        }, "<")
-        .to("#dubai-section", {
-            autoAlpha: 1,
-            ease: "none",
-            duration: 0.4  
-        }, "<")
-        .to("#soar-section", {
-            yPercent: -100,
-            ease: "none",
-            duration: 3 
-        })
-        .to("#dubai-section", {
-            autoAlpha: 1,
-            y: 0,
-            ease: "none",
-            duration: 3  
-        }, "<")
-        .to("#dubai-section .people", {
+
+        let dubaiTL = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#dubai-section",
+                start: "top center",
+                end: "bottom center",
+                scrub: 1,
+                pin: false,
+                // markers: true,
+            }
+        });
+
+        dubaiTL.to("#dubai-section .people", {
             scale: 2.3,
             ease: "none",
             transformOrigin: "center right",
-            duration: 4,
         })
         .to("#dubai-section .bg", {
             scale: 1.3,
             filter: 'blur(0px)',
             ease: "none",
-            duration: 4,  
         }, "<")
         .to("#dubai-section .text", {
             x: () => -(document.querySelector('#dubai-section .text').offsetWidth + window.innerWidth),
             ease: "none",
-            duration: 4  
         }, "<")
         .to("#dubai-section .people", {
             opacity: 0,
             ease: "none",
-            duration: 0.4,
-        }, "-=0.4")
-        .to("#soar-section", {
-            autoAlpha: 0,
-            ease: "none",
-            duration: 0.4 
-        })
-        .to("#rise-section", {
-            autoAlpha: 1,
-            ease: "none",
-            duration: 0.4 
-        })
-        .to("#boat-section", {
-            autoAlpha: 1,
-            ease: "none",
-            duration: 0.4  
-        }, "<")
-        .to("#rise-section", {
-            yPercent: -100,
-            ease: "none",
-            duration: 3 
-        })
-        .to("#boat-section", {
-            y: 0,
-            ease: "none",
-            duration: 3  
-        }, "<")
-        .to("#boat-section .boat", {
+        }, "-=0.4");
+
+        let boatTL = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#boat-section",
+                start: "top center",
+                end: "bottom center",
+                scrub: 1,
+                pin: false,
+                // markers: true,
+            }
+        });
+      
+       
+        boatTL.to("#boat-section .boat", {
             transformOrigin: "top right",
             right: '100%',
             transform: 'translateX(0)',
             y: 0,
             scale: 1.3,
             ease: "Power1.easeInOut",
-            duration: 4, 
+           
         })
         .to("#boat-section .boat", {
             y: '+=20', 
             ease: "Power1.easeInOut",
-            duration: 1,
-            yoyo: true,
-            repeat: 3
+            // duration: 1,
+            // yoyo: true,
+            // repeat: 3
         }, "<")
         .to("#boat-section .wave-left", {
             x: 100,
             y: 20,
             scale: 1.3,
             ease: "none",
-            duration: 4  
+            
         }, "<")
         .to("#boat-section .wave-middle", {
             x: 100,
             y: -100,
             scale: 0.9,
             ease: "none",
-            duration: 4  
+          
         }, "<")
         .to("#boat-section .wave-right", {
             x: 100,
             y: 50,
-            // scale: 0.9,
             ease: "none",
-            duration: 4  
+           
         }, "<")
         .to("#boat-section .text", {
             x: () => -(document.querySelector('#boat-section .text').offsetWidth + window.innerWidth),
             ease: "none",
-            duration: 4  
+           
         }, "<")
-        .to("#rise-section", {
-            autoAlpha: 0,
-            ease: "none",
-            duration: 0.4 
-        })
-        .to("#ride-section", {
-            autoAlpha: 1,
-            ease: "none",
-            duration: 0.4 
-        }, "<")
-        .to("#intro-section", {
-            autoAlpha: 1,
-            ease: "none",
-            duration: 0.4 
-        }, "+=0.2");
+        
         
 
 
