@@ -40,10 +40,10 @@ h3 {
     line-height: 1;
     font-family: $font-Poppins;
     text-transform: uppercase;
-    color: $black;
-    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1.5px;
-    -webkit-text-stroke-color: rgba($black, 0.2);
+    color: $white;
+    // -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+    // -webkit-text-stroke-width: 1.5px;
+    // -webkit-text-stroke-color: rgba($black, 0.2);
     @include height {
         font-size: 68px;
     }
@@ -90,7 +90,7 @@ h5 {
 
 .p {
     font-family: $font-Poppins;
-    color: #686868;
+    color: $white;
     font-weight: 300;
     font-style: italic;
     font-size: 26px;

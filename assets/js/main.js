@@ -84,8 +84,8 @@
             transformOrigin: "top center",
             ease: "none",
         }, "<")
-        .to("#dune-section .text", {
-            x: () => -(document.querySelector('#dune-section .text').offsetWidth + window.innerWidth),
+        .to("#dune-section .text-section", {
+            x: () => -(document.querySelector('#dune-section .text-section').offsetWidth + window.innerWidth),
             ease: "none",
             
         }, "<")
@@ -123,8 +123,8 @@
             scale: 1,
             ease: "none",
         }, "<")
-        .to("#canbana-section .text", {
-            x: () => -(document.querySelector('#canbana-section .text').offsetWidth + window.innerWidth),
+        .to("#canbana-section .text-section", {
+            x: () => -(document.querySelector('#canbana-section .text-section').offsetWidth + window.innerWidth),
             ease: "none",
         }, "<")
 
@@ -161,8 +161,8 @@
             filter: 'blur(0px)',
             ease: "none",
         }, "<")
-        .to("#balloon-section .text", {
-            x: () => -(document.querySelector('#balloon-section .text').offsetWidth + window.innerWidth),
+        .to("#balloon-section .text-section", {
+            x: () => -(document.querySelector('#balloon-section .text-section').offsetWidth + window.innerWidth),
             ease: "none",
         }, "<")
 
@@ -187,8 +187,8 @@
             filter: 'blur(0px)',
             ease: "none",
         }, "<")
-        .to("#dubai-section .text", {
-            x: () => -(document.querySelector('#dubai-section .text').offsetWidth + window.innerWidth),
+        .to("#dubai-section .text-section", {
+            x: () => -(document.querySelector('#dubai-section .text-section').offsetWidth + window.innerWidth),
             ease: "none",
         }, "<")
         .to("#dubai-section .people", {
@@ -244,8 +244,8 @@
             ease: "none",
            
         }, "<")
-        .to("#boat-section .text", {
-            x: () => -(document.querySelector('#boat-section .text').offsetWidth + window.innerWidth),
+        .to("#boat-section .text-section", {
+            x: () => -(document.querySelector('#boat-section .text-section').offsetWidth + window.innerWidth),
             ease: "none",
            
         }, "<")
